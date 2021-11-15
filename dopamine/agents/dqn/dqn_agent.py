@@ -224,7 +224,7 @@ class DQNAgent(object):
     """
     return collections.namedtuple('DQN_network', ['q_values', 'B_values'])
 
-  def _network_template(self, state, next_state):
+  def _network_template(self, state, next_state=None):
     """Builds the convolutional network used to compute the agent's Q-values.
 
     Args:

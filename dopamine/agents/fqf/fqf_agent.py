@@ -373,7 +373,7 @@ class FQFAgent(rainbow_agent.RainbowAgent):
     loss = tf.reduce_sum(quantile_huber_loss, axis=2)
     # Shape: batch_size x 1.
     loss = tf.reduce_mean(loss, axis=1)
-
+       
     chosen_action_L_tau = tf.gather_nd(self._replay_net_outputs.L_tau, reshaped_actions)
     print (">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>", chosen_action_L_tau.shape)
     loss1 = tf.reduce_mean(chosen_action_L_tau, axis=0)
